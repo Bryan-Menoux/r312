@@ -31,13 +31,12 @@ jobs:
           username: ${{ secrets.USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22007
-          source: "dist/*,package.json,package-lock.json"
+          source: "dist/*"
           target: "/var/www/r312/"
-          strip_components: 0
+          strip_components: 1
           rm: false
           overwrite: true
           debug: true
-
       - name: Install production dependencies on VPS
         uses: appleboy/ssh-action@v1.0.0
         with:
@@ -46,7 +45,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           port: 22007
           script: |
-            cd /var/www/r312
-            npm ci --omit=dev
-            cd server
-            PORT=8082 pm2 start -f entry.mjs
+            cd /var/www/r312/server
+            npm ci
+            npm install send server-destroy
+            pm2 start -f entry.mjs
