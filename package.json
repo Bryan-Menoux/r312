@@ -15,5 +15,17 @@
     "daisyui": "^5.0.50",
     "pocketbase": "^0.26.1",
     "tailwindcss": "^4.1.12"
-  }
+  },
+  "description": "L'objectif de cette semaine est un rappel de ce qu'on a vu l'année passée dans la ressource R213. De plus nous verrons comment utiliser les types avec TypeScript pour éviter les erreurs en runtime.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bryan-Menoux/r312.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bryan-Menoux/r312/issues"
+  },
+  "homepage": "https://github.com/Bryan-Menoux/r312#readme"
 }
